@@ -109,7 +109,7 @@
         <p class="card-text">{{i.content|safe|slice:":100"}}</p>
         {% for tag in i.tags.all %}
     <!-- <span class="badge badge-primary">{{tag}}</span> -->
-    <a href="/tagged_post/{{tag.id}}" class="btn btn-secondary btn-sm">{{tag}}</a>
+    <a href="/tagged_post/{{tag.id}}" class="badge badge-secondary btn-sm">{{tag}}</a>
     {% endfor%}
       </div>
       <div class="subm my-2" id="container">

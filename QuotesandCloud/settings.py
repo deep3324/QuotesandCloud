@@ -26,9 +26,9 @@ SECRET_KEY = '4s=#7mx^jx$=^z+@-7ro9c0fn9gizdd5yy3dv26d^mi0!&83ps'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
+ALLOWED_HOSTS = ['*','quotesandcloud.in', 'www.quotesandcloud.in']
+#CSRF_COOKIE_SECURE = True
+#SESSION_COOKIE_SECURE = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -80,12 +80,15 @@ WSGI_APPLICATION = 'QuotesandCloud.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'quotesandclouddb',
+	'USER': 'quotesandcloud',
+	'PASSWORD': 'quotesandcloud1!',
+	'HOST': 'quotesandcloud.cnmghcs10ybu.ap-south-1.rds.amazonaws.com',
+	'PORT': '3306',
+#'ENGINE': 'django.db.backends.sqlite3',
+#'NAME': BASE_DIR/'db.sqlite3',		}
+}	}
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -138,12 +141,12 @@ TAGGIT_CASE_INSENSITIVE = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # EMAIL_HOST='smtp.zoho.in'
-EMAIL_HOST='smtp.gmail.com'
+EMAIL_HOST='smtp.zoho.in'
 
 EMAIL_USE_TLS=True
 
 EMAIL_PORT= 587
 
-EMAIL_HOST_USER='dpcg7125601@gmail.com'
+EMAIL_HOST_USER='noreply@quotesandcloud.in'
 
-EMAIL_HOST_PASSWORD='Deep@3324'
+EMAIL_HOST_PASSWORD='Quotesandcloud1!'

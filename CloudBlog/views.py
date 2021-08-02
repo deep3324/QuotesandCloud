@@ -54,7 +54,7 @@ def contact(request):
         contact = Contact(name=name, email=email, subject=subject, message=message, date=datetime.today())
         contact.save()
         messages.success(request, "Your Contact Request has been submitted, We'll Contact you soon")
-        send_mail('Contact Form',body,settings.EMAIL_HOST_USER,[email])
+        send_mail('Contact Requests',body,settings.EMAIL_HOST_USER,['navneetbhardwaj935@gmail.com'])
     return render(request,'contact.html', context)
 
 def about(request):
@@ -127,11 +127,11 @@ def newsletter(request):
     if request.method=='POST':
         name=request.POST.get('name')
         email=request.POST.get('email')
-        body= 'We Newsletter Request on : \nname: '+ name + '\nEmail: ' + email
+        body= 'Hey'+ name + '\n\nThanks for subscribing for newsletter. \n\n Regards:\nQuotes and Cloud'
         newsletter = Newsletter(name=name, email=email, date=datetime.today())
         newsletter.save()
         messages.success(request, "Your Newsletter Request has been submitted, You'll soon receive newsletter")
-        # send_mail('Newsletter Form',body,settings.EMAIL_HOST_USER,[email])
+        send_mail('Newsletter Request Accepted',body,settings.EMAIL_HOST_USER,[email])
     return redirect('/', {'blog':deta})
 
 def search(request):
